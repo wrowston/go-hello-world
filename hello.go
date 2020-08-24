@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"net/http"
+
+	"github.com/wrowston/go-hello-world/controllers"
+)
 
 func main() {
-	fmt.Printf("hello, world\n")
+	controllers.RegisterControllers()
+	http.ListenAndServe(":3000", nil)
 }
